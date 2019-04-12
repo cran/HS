@@ -1,0 +1,13 @@
+d8587ac1896205162adfdaa1a7c4536b *DESCRIPTION
+14ec29c755d9ed0466f13c89a4bdd41d *INDEX
+2deaf3d6b6390871d16d9c1caac03eb4 *NAMESPACE
+266715c3b45d43dcc8163601a8da3854 *R/data.R
+bfb5449f8a5cd89d26108642eaf8ae3b *R/preprocessing.R
+dad84d8250bab50479efbbb8b2d4cead *R/seg.R
+d1901bb12f00eda1ea0658c324ddcc3e *R/segsmooth.R
+711a49ab8a38dd77b06d1e6548db0b69 *data/deflection.rda
+0c6a3c0c6b992cd77fc0e2f7a41afa39 *inst/CITATION
+1a79ca1d460a16db1680a8d28a190ace *man/deflection.Rd
+b649bb22237c9ae9c002bd664761bf05 *man/preprocessing.Rd
+89cb5ea0d2a18644f582ca43c01b46fb *man/seg.Rd
+583b5e26db672079840e818b3346be97 *man/segsmooth.Rd

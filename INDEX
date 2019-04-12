@@ -1,0 +1,4 @@
+preprocessing    Preprocessing for field monitoring data.
+segsmooth        Smoothing data using the moving average method for the homogenous segmentation.
+seg              Homogenous segmentation for spatial lines data.
+deflection       Road deflection dataset.
