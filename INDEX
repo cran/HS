@@ -1,4 +1,17 @@
 preprocessing    Preprocessing for field monitoring data.
-segsmooth        Smoothing data using the moving average method for the homogenous segmentation.
-seg              Homogenous segmentation for spatial lines data.
+segsmooth        Smoothing data using the moving average method for the homogeneous segmentation.
+findbreak        Find spaital breaking locations and add a column of breaks.
 deflection       Road deflection dataset.
+tsdwa            Traffic speed deflectometer (TSD) data of pavement deteriorations.
+segid.matrix     A matrix of segmentations with different methods for data "tsdwa".
+cda              Cummulative difference approach (CDA) for homogeneous segmentation of spatial lines data.
+mergeshort       Function for merging segments shorter than minimum threshold to neighbours.
+splitlong        Split long segments to segments within length threshold.
+mcv              Minimization coefficient of variation (MCV) for homogeneous segmentation of spatial lines data.
+shs              Spatial heterogeneity-based segmentation (SHS) for homogeneous segmentation of spatial lines data.
+segbycategory    Segmentation with categorical variables.
+hs               Homogeneous segmentation function with continuous variables.
+hsctg            Homogeneous segmentation function with both categorical and continous variables.
+segsummary       Statistical summary of homogeneous segments.
+segplot          Visualization of homogeneous segments.
+segcompare       Segments comparison of different homogeneous segmentations methods.

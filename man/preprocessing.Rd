@@ -4,7 +4,7 @@
 \alias{preprocessing}
 \title{Preprocessing for field monitoring data.}
 \usage{
-preprocessing(var = "Deflection", location = "SLK", data = data)
+preprocessing(var = "deflection", location = "SLK", data = data)
 }
 \arguments{
 \item{var}{A character of the name of a variable in a dataset,
@@ -16,9 +16,10 @@ such as a road pavement performance indicator.}
 }
 \description{
 The preprocessing includes two steps:
-removing missing data and ordering data by spatial locations.
+             removing missing data and ordering data by spatial locations.
 }
 \examples{
-def <- preprocessing(var = "Deflection", location = "SLK", data = deflection)
+testdata <- tsdwa[1:100,]
+testdata <- preprocessing(var = "Deflection", location = "SLK.start", data = testdata)
 
 }

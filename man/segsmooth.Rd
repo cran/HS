@@ -2,9 +2,9 @@
 % Please edit documentation in R/segsmooth.R
 \name{segsmooth}
 \alias{segsmooth}
-\title{Smoothing data using the moving average method for the homogenous segmentation.}
+\title{Smoothing data using the moving average method for the homogeneous segmentation.}
 \usage{
-segsmooth(var = "Deflection", range = 11, data = data)
+segsmooth(var = "deflection", range = 11, data)
 }
 \arguments{
 \item{var}{A character of the name of a variable in a dataset,
@@ -19,13 +19,13 @@ A center aligned moving window is used for the moving average method.
 }
 \examples{
 # preprocessing
-def <- preprocessing(var = "Deflection", location = "SLK", data = deflection)
+testdata <- tsdwa[1:500,]
+testdata <- preprocessing(var = "Deflection", location = "SLK.start", data = testdata)
 # smoothing
-def$smooth_def <- segsmooth(var = "Deflection", range = 11, data = def)
+testdata <- segsmooth(var = "Deflection", range = 11, data = testdata)
 # plot
-n <- 1:500
-plot(def$SLK[n], def$Deflection[n], type = "l",
-     col = "lightblue", xlab = "SLK", ylab = "Deflection")
-lines(def$SLK[n], def$smooth_def[n])
+plot(testdata$SLK.start, testdata$Deflection, type = "l",
+     col = "lightblue", xlab = "location", ylab = "deflection")
+lines(testdata$SLK.start, testdata$smooth.Deflection)
 
 }

@@ -1,8 +1,8 @@
-#' Smoothing data using the moving average method for the homogenous segmentation.
+#' Smoothing data using the moving average method for the homogeneous segmentation.
 #'
 #' @description A center aligned moving window is used for the moving average method.
 #'
-#' @usage segsmooth(var = "Deflection", range = 11, data = data)
+#' @usage segsmooth(var = "deflection", range = 11, data)
 #'
 #' @param var A character of the name of a variable in a dataset,
 #'            such as a road pavement performance indicator.
@@ -13,21 +13,26 @@
 #'
 #' @examples
 #' # preprocessing
-#' def <- preprocessing(var = "Deflection", location = "SLK", data = deflection)
+#' testdata <- tsdwa[1:500,]
+#' testdata <- preprocessing(var = "Deflection", location = "SLK.start", data = testdata)
 #' # smoothing
-#' def$smooth_def <- segsmooth(var = "Deflection", range = 11, data = def)
+#' testdata <- segsmooth(var = "Deflection", range = 11, data = testdata)
 #' # plot
-#' n <- 1:500
-#' plot(def$SLK[n], def$Deflection[n], type = "l",
-#'      col = "lightblue", xlab = "SLK", ylab = "Deflection")
-#' lines(def$SLK[n], def$smooth_def[n])
+#' plot(testdata$SLK.start, testdata$Deflection, type = "l",
+#'      col = "lightblue", xlab = "location", ylab = "deflection")
+#' lines(testdata$SLK.start, testdata$smooth.Deflection)
 #'
 #' @export
 
-segsmooth <- function(var = "Deflection", range = 11, data = data){
+segsmooth <- function(var = "deflection", range = 11, data){
+  data <- as.data.table(data)
   # smooth
-  x <- rollapply(data[, which(colnames(data) == var)], width = range, FUN = function(x) mean(x, na.rm=TRUE),
+  x <- rollapply(data[, ..var], width = range, FUN = function(x) mean(x, na.rm=TRUE),
                  by = 1, by.column = TRUE, partial = TRUE, fill = NA, align = "center")
-  return(x)
+  x <- data.frame(x)
+  x.names <- paste("smooth", var, sep = ".")
+  names(x) <- x.names
+  data <- cbind(data, x)
+  return(data)
 }
 
